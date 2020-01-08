@@ -42,7 +42,10 @@
 <br>
 
 - **동적으로 메서드를 구현하자**
+  
   - **Strategy Pattern의 핵심**
+  
+  <img src="https://github.com/jayyhkwon/DesignPattern/blob/master/src/main/java/strategy/StrategyPattern.png"/>
 
 <br>
 <br>
@@ -59,7 +62,7 @@
 
 
 
-그림
+<img src="https://github.com/jayyhkwon/DesignPattern/blob/master/src/main/java/strategy/DefaultMethod.png"/>
 
 
 
@@ -68,4 +71,3 @@
 
 
 
- 
