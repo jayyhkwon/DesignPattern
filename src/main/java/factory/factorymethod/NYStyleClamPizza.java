@@ -1,4 +1,4 @@
-package headfirst.designpatterns.factory.pizzafm;
+package factory.factorymethod;
 
 public class NYStyleClamPizza extends Pizza {
 

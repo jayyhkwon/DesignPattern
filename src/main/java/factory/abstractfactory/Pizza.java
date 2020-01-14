@@ -10,7 +10,9 @@ public abstract class Pizza {
 	Pepperoni pepperoni;
 	Clams clam;
 
-	abstract void prepare();
+	void prepare(){
+        System.out.println("Preparing " + name);
+    }
 
 	void bake() {
 		System.out.println("Bake for 25 minutes at 350");

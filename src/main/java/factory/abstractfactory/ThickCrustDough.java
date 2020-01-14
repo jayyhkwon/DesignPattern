@@ -1,4 +1,4 @@
-package headfirst.designpatterns.factory.pizzaaf;
+package factory.abstractfactory;
 
 public class ThickCrustDough implements Dough {
 	public String toString() {
