@@ -3,13 +3,19 @@ package composite;
 public class MenuTest {
 
     public static void main(String[] args) {
-        MenuComponent pancakeHouseMenu = new Menu("팬케이크 하우스 메뉴","아침 메뉴");
-        MenuComponent dinerMenu = new Menu("객체마을 식당 메뉴", "점심 메뉴");
-        MenuComponent cafeMenu = new Menu("카페 메뉴", "저녁 메뉴");
-        MenuComponent dessertMenu = new Menu("디저트 메뉴", "디저트를 즐겨보세요!");
-        MenuComponent coffeeMenu = new Menu("커피 메뉴", "졸린 오후 커피 한잔 드셔보세요!");
+        // 상위 인터페이스(MenuComponent)가 아닌 구상클래스에 의존적이다
+        Menu pancakeHouseMenu = new Menu("팬케이크 하우스 메뉴","아침 메뉴");
+        // 상위 인터페이스(MenuComponent)가 아닌 구상클래스에 의존적이다
+        Menu dinerMenu = new Menu("객체마을 식당 메뉴", "점심 메뉴");
+        // 상위 인터페이스(MenuComponent)가 아닌 구상클래스에 의존적이다
+        Menu cafeMenu = new Menu("카페 메뉴", "저녁 메뉴");
+        // 상위 인터페이스(MenuComponent)가 아닌 구상클래스에 의존적이다
+        Menu dessertMenu = new Menu("디저트 메뉴", "디저트를 즐겨보세요!");
+        // 상위 인터페이스(MenuComponent)가 아닌 구상클래스에 의존적이다
+        Menu coffeeMenu = new Menu("커피 메뉴", "졸린 오후 커피 한잔 드셔보세요!");
 
-        MenuComponent allMenus = new Menu("전체 메뉴","전체 메뉴");
+        // 상위 인터페이스(MenuComponent)가 아닌 구상클래스에 의존적이다
+        Menu allMenus = new Menu("전체 메뉴","전체 메뉴");
 
         allMenus.add(pancakeHouseMenu);
         allMenus.add(dinerMenu);

@@ -14,17 +14,14 @@ public class Menu extends MenuComponent {
         this.description = description;
     }
 
-    @Override
     public void add(MenuComponent menuComponent){
         menuComponents.add(menuComponent);
     }
 
-    @Override
     public void remove(MenuComponent menuComponent){
         menuComponents.remove(menuComponent);
     }
 
-    @Override
     public MenuComponent getChild(int i){
         return menuComponents.get(i);
     }

@@ -37,7 +37,6 @@ public class MenuItem extends MenuComponent{
         System.out.println("    --  " + getDescription());
     }
 
-
     public boolean isVegetarian() {
         return vegetarian;
     }
