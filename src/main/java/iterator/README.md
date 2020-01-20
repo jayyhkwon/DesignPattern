@@ -16,6 +16,7 @@
 
 > 소스코드 구성
 
+<<<<<<< HEAD
 - Iterator 인터페이스 없이 구현한 코드
   - `git checkout feature/iterator1`
 - Iterator 패턴을 사용하여 리팩토링
