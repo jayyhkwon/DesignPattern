@@ -1,5 +1,7 @@
 package iterator;
 
+import java.util.Iterator;
+
 public class DinnerMenu {
     static final int MAX_ITEMS = 4;
     int numberOfItems = 0;
@@ -23,7 +25,12 @@ public class DinnerMenu {
         }
     }
 
-    public MenuItem[] getMenuItems(){
-        return menuItems;
+//    public MenuItem[] getMenuItems(){
+//        return menuItems;
+//    }
+
+    // 반복을 Iterator 인터페이스로 캡슐화한다
+    public Iterator createIterator(){
+        return new DinnerMenuIterator(menuItems);
     }
 }
