@@ -1,93 +1,73 @@
 package state;
 
 public class GumballMachine {
-    private static final int SOLD_OUT = 0;
-    private static final int NO_COIN = 1; // 코인 투입 전
-    private static final int HAS_COIN = 2; // 코인 투입
-    private static final int SOLD = 3; // 판매
 
-    private int state = SOLD_OUT;
+    State noCoinState;
+    State hasCoinState;
+    State soldState;
+    State soldOutState;
+    State winnerState;
+
+    private State state;
     private int count = 0;
 
     public GumballMachine(int count){
         this.count = count;
-        if(count > 0){
-            this.state = NO_COIN;
-        }
+        noCoinState = new NoCoinState(this);
+        hasCoinState = new HasCoinState(this);
+        soldState = new SoldState(this);
+        soldOutState = new SoldOutState(this);
+        winnerState = new WinnerState(this);
+
+        state = noCoinState;
     }
 
     public void insertCoin(){
-        switch (state){
-            case NO_COIN:
-                state = HAS_COIN;
-                System.out.println("코인을 투입하셨습니다");
-                break;
-            case HAS_COIN:
-                System.out.println("코인이 이미 존재합니다");
-                break;
-            case SOLD_OUT:
-                System.out.println("매진입니다. 관리자에게 문의하세요");
-                break;
-            case SOLD:
-                System.out.println("알맹이가 나오는 중입니다. 잠시만 기다려주세요");
-        }
+        state.insertCoin();
     }
 
     public void ejectCoin(){
-        switch (state){
-            case NO_COIN:
-                System.out.println("반환할 코인이 없습니다");
-                break;
-            case HAS_COIN:
-                System.out.println("코인이 반환됩니다");
-                state = NO_COIN;
-                break;
-            case SOLD:
-                System.out.println("코인이 없습니다");
-                break;
-            case SOLD_OUT:
-                System.out.println("반환할 코인이 없습니다");
-                break;
-        }
+        state.ejectCoin();
     }
 
     public void turnCrank(){
-        switch (state){
-            case NO_COIN:
-                System.out.println("코인을 먼저 넣어주세요");
-                break;
-            case HAS_COIN:
-                System.out.println("손잡이를 돌리셨습니다");
-                state = SOLD;
-                dispense();
-                break;
-            case SOLD_OUT:
-                System.out.println("매진입니다. 관리자에게 문의하세요");
-                break;
-            case SOLD:
-                System.out.println("손잡이는 한번만 돌려주세요");
-                break;
-        }
+        state.turnCrank();
+        state.dispense();
     }
 
-    private void dispense() {
-        switch (state){
-            case NO_COIN:
-                System.out.println("코인을 넣어주세요");
-                break;
-            case HAS_COIN:
-                System.out.println("손잡이를 먼저 돌려주세요");
-                break;
-            case SOLD:
-                System.out.println("알맹이가 나가는 중입니다");
-                System.out.println("알맹이를 얻으셨습니다");
-                count--;
-                if(count == 0){
-                    System.out.println("알맹이가 더 이상 없습니다.");
-                    state = SOLD_OUT;
-                } else {
-                    state = NO_COIN;
-                }
+    public State getNoCoinState() {
+        return noCoinState;
+    }
+
+    public State getHasCoinState() {
+        return hasCoinState;
+    }
+
+    public State getSoldState() {
+        return soldState;
+    }
+
+    public State getSoldOutState() {
+        return soldOutState;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public State getWinnerState() {
+        return winnerState;
+    }
+
+    public void releaseBall() {
+        System.out.println("알맹이가 나오는 중입니다");
+        if(count != 0){
+            count--;
         }
+        System.out.println("알맹이가 나왔습니다");
     }
 }
