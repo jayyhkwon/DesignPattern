@@ -7,6 +7,7 @@
 - **상속**을 활용한다
 - 객체 생성이 서브 클래스에 위임된다
 - 서브클래스에서 팩토리 메서드를 구현하여 객체를 생성한다
+- **템플릿 메서드 패턴의 일부로 사용될 수 있다**
 
 <br>
 
@@ -30,7 +31,7 @@
 
 > **공통점**
 
-- 객체 생성을 캡슐화 한다
+- **객체 생성을 캡슐화 한다 -> 클라이언트는 생성된 객체의 정확한 타입을 알 필요가 없다. 추상 타입에 의존한다**
 
 <br>
 
@@ -45,5 +46,6 @@
 
 <br>
 
-ref. <a href="https://johngrib.github.io/wiki/factory-method-pattern/">블로그</a>
+ref. <a href="https://johngrib.github.io/wiki/factory-method-pattern/">블로그</a><br>
 
+ref. <a href="https://softwareengineering.stackexchange.com/questions/340099/factory-method-is-a-specialization-of-template-method-how">팩토리 메서드 패턴 vs 템플릿 메서드 패턴</a>
