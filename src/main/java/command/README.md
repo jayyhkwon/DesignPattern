@@ -8,8 +8,11 @@
 
 - **실행될 기능을 캡슐화함**으로써 기능의 실행을 요구하는 호출자(Invoker) 클래스와 실제 기능을 실행하는 수신자(Receiver) 클래스 사이의 의존성을 제거한다.
 - 따라서 실행될 기능의 변경에도 호출자 클래스를 수정 없이 그대로 사용 할 수 있도록 해준다.
+- JAVA API에서 Thread 클래스가 Command 패턴을 사용한다
+
 <br>
 <br>
+
 > **역할이 수행하는 작업**
 
 - Command
@@ -25,5 +28,7 @@
     - 즉, ConcreteCommand의 기능을 실행하기 위해 사용하는 수신자 클래스
 <br>
 <br>
+
+
 
 ref. <a href="https://gmlwjd9405.github.io/2018/07/07/command-pattern.html">블로그</a>
